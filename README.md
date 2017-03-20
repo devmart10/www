@@ -1,2 +1,2 @@
-# www
-Website on the school servers
+# Welcome to my site!
+This is a website I have that I'm using through the CalPoly servers
