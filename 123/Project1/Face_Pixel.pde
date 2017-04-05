@@ -1,0 +1,391 @@
+//Center Pixel
+void setup(){
+  //size(200, 200);
+  //drawGrid(width, 10);
+  size(400, 300);
+  background(0);
+  drawTimPixel(200, 100, PI/4.0);
+  //Right Pixel
+  pushMatrix();
+    translate(300, 100);
+    rotate(PI/4);
+    
+    pushMatrix();
+      scale(1/sqrt(2));
+      //Background
+      fill(14, 155, 151);
+      rect(-100, -100, 200, 200);
+      
+      //Brown Border
+      stroke(139, 50, 6);
+      noFill();
+      strokeWeight(15);
+      //strokeJoin(BEVEL);
+      beginShape();
+        curveVertex(0, 100);
+        curveVertex(-90, 90);
+        curveVertex(-90, -60);
+        curveVertex(-20, -100);
+        curveVertex(90, -45);
+        curveVertex(90, 80);
+        curveVertex(50, 100);
+        curveVertex(0, 100);
+        vertex(-90, 85);
+      endShape();
+      
+      //Dark Blue
+      stroke(38, 49, 95);
+      strokeWeight(40);
+      //curveTightness(1);
+      beginShape();
+        curveVertex(-80, 70);
+        curveVertex(-80, 40);
+        curveVertex(-50, -70);
+        curveVertex(20, -70);
+        curveVertex(60, -30);
+        curveVertex(80, 20);
+        curveVertex(70, 60);
+        curveVertex(30, 80);
+        curveVertex(-50, 70);
+        curveVertex(-80, 40);
+        curveVertex(-50, -70);
+      endShape();
+      
+      //Light Blue
+      stroke(26, 100, 173);
+      strokeWeight(40);
+      beginShape();
+        curveVertex(-40, 30);
+        curveVertex(-40, 30);
+        curveVertex(-30, -20);
+        curveVertex(20, -30);
+        curveVertex(40, 30);
+        curveVertex(0, 50);
+        curveVertex(-40, 30);
+        curveVertex(-40, 30);
+      endShape();
+      
+      //White
+      noStroke();
+      fill(255);
+      pushMatrix();
+        translate(0, 10);
+        rotate(PI/4);
+        ellipse(0, 0, 25, 40);
+      popMatrix();
+      
+      //Black Border
+      stroke(0);
+      strokeWeight(12);
+      noFill();
+      beginShape();
+        curveVertex(-50, 30);
+        curveVertex(-50, -10);
+        curveVertex(-30, -40);
+        curveVertex(20, -40);
+        curveVertex(60, 0);
+        curveVertex(10, 50);
+        curveVertex(-50, 30);
+        curveVertex(-50, -10);
+        curveVertex(-30, -40);
+      endShape();
+      
+      //Grid
+      /*stroke(255);
+      strokeWeight(2);
+      for (int i = -100; i <= 100; i = i + 10){
+        for (int j = -100; j <= 100; j = j + 10){
+          point(i, j);
+          if (i == 0 || j == 0){
+            stroke(0);
+            point(i, j);
+            stroke(255);
+          }
+        }
+      }
+      
+      stroke(255, 0, 0);
+      strokeWeight(5);
+      point(-50, 30);
+      point(-50, -10);
+      point(-30, -40);
+      point(20, -40);
+      point(60, 0);
+      point(40, 30);
+      point(10, 50);*/
+    popMatrix();
+  popMatrix();
+  
+  //Left Pixel
+  pushMatrix();
+    translate(-100, -50);
+    noStroke();
+    fill(14, 155, 151);
+    translate(width/2,height/2);
+    pushMatrix();//circle and tile
+      rotate(PI/4);
+      rect(-70,-70,140,140);
+      fill(#464FAA);
+      ellipse(0,0,140,140);
+    popMatrix();
+    
+    pushMatrix();//pink
+      fill(#E896DA);
+      beginShape();
+      curveVertex(-60,0);
+      curveVertex(-50,-40);
+      curveVertex(-30,-56);
+      curveVertex(-5,-67);
+      curveVertex(15,-66);
+      curveVertex(40,-65);
+      curveVertex(55,-40);
+      curveVertex(55,35);
+      curveVertex(40,50);
+      curveVertex(25,56);
+      curveVertex(-25,58);
+      curveVertex(-56,30);
+      curveVertex(-60,20);
+      curveVertex(-65,5);
+      curveVertex(-70,0);
+      endShape();
+    popMatrix();
+    
+    pushMatrix();//Gold
+      fill(#CB9035);
+      beginShape();
+      curveVertex(-62,0);
+      curveVertex(-60,-15);
+      curveVertex(-50,-30);
+      curveVertex(-40,-40);
+      curveVertex(-30,-55);
+      curveVertex(-15,-60);
+      curveVertex(10,-67);
+      curveVertex(20,-60);
+      curveVertex(30,-50);
+      curveVertex(40,-40);
+      curveVertex(50,-20);
+      curveVertex(53,-10);
+      curveVertex(53,0);
+      curveVertex(52,15);
+      curveVertex(49,30);
+      curveVertex(45,40);
+      curveVertex(43,45);
+      curveVertex(30,55);
+      curveVertex(10,58);
+      curveVertex(0,57);
+      curveVertex(-10,56);
+      curveVertex(-15,55);
+      curveVertex(-20,54);
+      curveVertex(-25,53);
+      curveVertex(-30,48);
+      curveVertex(-35,45);
+      curveVertex(-40,40);
+      curveVertex(-45,36);
+      curveVertex(-50,32);
+      curveVertex(-55,26);
+      curveVertex(-60,15);
+      curveVertex(-60,10);
+      endShape();
+    popMatrix();
+    
+    pushMatrix();//dark blue
+      fill(#41406C);
+      beginShape();
+      curveVertex(-58,0);
+      curveVertex(-50,-15);
+      curveVertex(-44,-30);
+      curveVertex(-40,-35);
+      curveVertex(-37,-38);
+      curveVertex(-34,-42);
+      curveVertex(-30,-45);
+      curveVertex(-24,-50);
+      curveVertex(-15,-54);
+      curveVertex(-10,-55);
+      curveVertex(0,-56);
+      curveVertex(10,-55);
+      curveVertex(15,-54);
+      curveVertex(20,-51);
+      curveVertex(25,-46);
+      curveVertex(30,-42);
+      curveVertex(35,-37);
+      curveVertex(40,0);
+      curveVertex(39,10);
+      curveVertex(36,25);
+      curveVertex(34,30);
+      curveVertex(32,40);
+      curveVertex(26,43);
+      curveVertex(22,47);
+      curveVertex(15,49);
+      curveVertex(10,50);
+      curveVertex(0,52);
+      curveVertex(-10,50);
+      curveVertex(-15,50);
+      curveVertex(-25,46);
+      curveVertex(-30,40);
+      curveVertex(-35,36);
+      curveVertex(-40,32);
+      curveVertex(-45,26);
+      curveVertex(-48,23);
+      curveVertex(-48,15);
+      curveVertex(-50,0);
+      endShape();
+    popMatrix();
+    
+    pushMatrix();//light blue
+      fill(#88D8F0);
+      beginShape();
+      curveVertex(-30,0);
+      curveVertex(-30,-10);
+      curveVertex(-25,-20);
+      curveVertex(-20,-26);
+      curveVertex(-15,-30);
+      curveVertex(-10,-32);
+      curveVertex(-5,-32);
+      curveVertex(0,-31);
+      curveVertex(10,-30);
+      curveVertex(20,-25);
+      curveVertex(25,-18);
+      curveVertex(26,-15);
+      curveVertex(25,15);
+      curveVertex(15,25);
+      curveVertex(10,25);
+      curveVertex(0,22);
+      curveVertex(-5,20);
+      curveVertex(-10,14);
+      curveVertex(-13,13);
+      curveVertex(-15,12);
+      curveVertex(-20,10);
+      curveVertex(-25,6);
+      curveVertex(-30,4);
+      endShape();
+    popMatrix();
+    fill(#FFFFFF);
+    ellipse(0,0,20,18);
+    ellipse(1,-5,17,15);
+    ellipse(-4,-2,14,13);
+  popMatrix();
+}
+
+
+// Draws Tim's pixel at the given point rotated by the given angle
+void drawTimPixel(int x, int y, float angle)
+{
+  pushMatrix();
+  translate(x, y);
+  rotate(angle);
+  scale(1.0 / sqrt(2));
+  pushStyle();
+  noStroke();
+  BGRectangles();
+  PurpleOuter();
+  TealMiddle();
+  InnerBlob();
+  Speckles();
+  popMatrix();
+  popStyle();
+}
+
+void InnerBlob()
+{
+  pushMatrix();
+  pushStyle();
+  
+  translate(45,45);
+  fill(#000000);
+  
+  //drawSquare(120, 50); // Inner blob
+  beginShape();
+  curveVertex(0, 0);
+  curveVertex(57, -10);
+  curveVertex(109, 0);
+  curveVertex(100, 106);
+  curveVertex(0, 110);
+  curveVertex(0, 0);
+  curveVertex(120, 0);
+  endShape();
+  
+  popStyle();
+  popMatrix();
+}
+
+void TealMiddle()
+{
+  pushMatrix();
+  pushStyle();
+  
+  translate(25, 25);
+  fill(#676CE8);
+  
+  //drawSquare(160, 30); // Teal middle
+  beginShape();
+  curveVertex(0, 0);
+  curveVertex(75, -8);
+  curveVertex(150, 0);
+  curveVertex(150, 150);
+  curveVertex(0, 150);
+  curveVertex(0, 0);
+  curveVertex(150, 0);
+  endShape();
+  
+  popStyle();
+  popMatrix();
+}
+
+void PurpleOuter()
+{
+  fill(#B43E93);
+  drawSquare(200, 30); // Deep purple outside
+}
+
+void BGRectangles()
+{
+  pushMatrix();
+  fill(#3EBEF7);
+  drawSquare(50, 0);
+  translate(150, 0);
+  fill(#EAF73E);
+  drawSquare(50, 0);
+  translate(0, 150);
+  fill(#F7823E);
+  drawSquare(50, 0);
+  translate(-150, 0);
+  fill(#35762B);
+  drawSquare(50, 0);
+  popMatrix();
+}
+
+void Speckles()
+{
+  pushMatrix();
+  fill(#FFFFFF);
+  translate(30, 30);
+  circle(0,0,10);
+  translate(0, 140);
+  circle(0,0,10);
+  popMatrix();
+  
+}
+
+void drawSquare(int size, int roundness)
+{
+  rect(0, 0, size, size, roundness);
+}
+
+void circle(int x, int y, int radius)
+{
+  ellipse(x, y, radius, radius);
+}
+
+void drawGrid(int radius, int spacing)
+{
+  int x_iter, y_iter;
+  pushStyle();
+  fill(#FFFFFF);
+  for (x_iter = 0; x_iter <= radius; x_iter += spacing)
+  {
+    for (y_iter = 0; y_iter <= radius; y_iter += spacing)
+    {
+      ellipse(x_iter, y_iter, 5, 5);
+    }
+  }
+}

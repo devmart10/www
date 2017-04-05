@@ -1,0 +1,95 @@
+//Background
+void setup(){
+  bg();
+}
+
+void bg(){
+  size(400, 400);
+  background(50, 100, 255);
+  translate(width/2, height/2);
+  fill(150, 100, 20);
+  noStroke();
+  rect(-200, 50, width, height/2 + 50);
+  
+  //Body
+  pushMatrix();
+    fill(20, 100, 20);
+    scale(2);
+    translate(0, -40);
+    quad(-60, 100, 0, 100, 20, 20, 0, 0);
+  popMatrix();
+  
+  //Arm
+  pushMatrix();
+    fill(100, 150, 20);
+    scale(.8);
+    rotate(PI/6);
+    rect(0, 0, 80, 20);
+    rect(60, -20, 20, 40);
+  popMatrix();
+  
+  //Spines
+  pushMatrix();
+    fill(50, 75, 100);
+    translate(-120, 120);
+    rotate(-PI/3);
+    for (int k = 0; k < 5; k++){
+      triangle(0 + k*40, 0, 20 + k*40, -40, 40 + k*40, 0);
+    }  
+  popMatrix();
+  
+  //Eye & Eyebrow
+  pushMatrix();
+    translate(20, -40);
+    rotate(PI/4);
+    fill(255, 10, 10);
+    ellipse(0, 0, 10, 5);
+    fill(0);
+    rect(-12, -5, 20, 2);
+  popMatrix();
+  
+  //Mouth
+  pushMatrix();
+    translate(35, -15);
+    rotate(PI/12);
+    fill(0);
+    arc(0, 0, 20, 20, PI/2, 3*PI/2);
+  popMatrix();
+}
+
+//Fire - Static
+/*pushMatrix();
+  translate(35, -15);
+  for (int l = 0; l < 10; l++){
+    strokeWeight(random(2, 7));
+    stroke(255, random(255), 0);
+    line(0, 0, random(50, 80), random(-20, 20));
+  }
+popMatrix();
+strokeWeight(1);
+noStroke();*/
+
+//Fire Animation
+void draw(){
+  for (int l = 0; l < 10; l++){
+    pushMatrix();
+      translate(width/2 + 35, height/2 - 15);
+      strokeWeight(random(2, 7));
+      stroke(255, random(255), 0);
+      line(0, 0, random(50, 80), random(-20, 20));
+    popMatrix();
+  }
+  //bg();
+}
+
+/*Grid
+fill(255);
+for (int i = -200; i <= 200; i = i + 20){
+  for (int j = -200; j <= 200; j = j + 20){
+    ellipse(i, j, 5, 5);
+  }
+}
+fill(255, 0, 0);
+ellipse(0, 0, 5, 5);*/
+
+//save("Godzilla.jpeg");
